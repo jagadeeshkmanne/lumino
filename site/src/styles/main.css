@@ -1,0 +1,2046 @@
+/* Lumino Docs - Storybook exact styles */
+
+/* Storybook uses Nunito Sans font + Fira Code for code */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+  /* Storybook dark theme colors */
+  --sb-dark-bg: #171C23;
+  --sb-dark-bg-hover: #1d2229;
+  --sb-dark-border: rgba(255, 255, 255, 0.1);
+  --sb-text-muted: rgba(255, 255, 255, 0.5);
+  --sb-text-light: rgba(255, 255, 255, 0.8);
+  --sb-text-white: #FFFFFF;
+  --sb-accent-pink: #FF4785;
+  --sb-accent-blue: #1EA7FD;
+  --sb-accent-teal: #73E4CC;
+  --sb-accent-orange: #FF8C00;
+  /* Light theme colors */
+  --sb-light-bg: #FFFFFF;
+  --sb-light-bg-alt: #F6F9FC;
+  --sb-light-border: rgba(0, 0, 0, 0.1);
+  --sb-text-dark: #1B1C1D;
+  --sb-text-body: #454E54;
+  --sb-text-muted-light: #666666;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--sb-text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   LAYOUT
+   ======================================== */
+
+.docs-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #F6F9FC;
+}
+
+/* Header - Dark theme to match Storybook */
+.docs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 0 20px;
+  background: var(--sb-dark-bg);
+  border-bottom: 1px solid var(--sb-dark-border);
+  flex-shrink: 0;
+}
+
+.docs-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.docs-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--sb-text-white);
+  letter-spacing: -0.3px;
+}
+
+.docs-logo-icon {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, var(--sb-accent-pink) 0%, var(--sb-accent-blue) 100%);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 900;
+  color: white;
+  box-shadow: 0 2px 8px rgba(255, 71, 133, 0.3);
+}
+
+.docs-header-nav {
+  display: flex;
+  gap: 4px;
+}
+
+.docs-header-nav-item {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.docs-header-nav-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+}
+
+.docs-header-nav-item.active {
+  background: #1EA7FD;
+  color: #FFFFFF;
+}
+
+.docs-version {
+  font-size: 10px;
+  color: var(--sb-text-muted);
+  padding: 3px 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.docs-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.docs-header-link {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sb-text-light);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.docs-header-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--sb-text-white);
+}
+
+.docs-header-author {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--sb-text-muted);
+  font-style: italic;
+}
+
+.docs-main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ========================================
+   SIDEBAR - Storybook dark theme
+   ======================================== */
+
+.docs-sidebar {
+  width: 250px;
+  background: var(--sb-dark-bg);
+  border-right: none;
+  overflow-y: auto;
+  padding: 0;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Search box */
+.sidebar-search {
+  padding: 16px;
+  border-bottom: 1px solid var(--sb-dark-border);
+}
+
+.sidebar-search-input {
+  width: 100%;
+  padding: 8px 12px;
+  padding-left: 36px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: var(--sb-text-white);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.15s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.4)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+.sidebar-search-input::placeholder {
+  color: var(--sb-text-muted);
+}
+
+.sidebar-search-input:focus {
+  border-color: var(--sb-accent-blue);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Navigation container */
+.sidebar-nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 0;
+}
+
+.nav-group {
+  margin-bottom: 4px;
+}
+
+.nav-group-title {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--sb-text-muted);
+  padding: 8px 16px;
+  cursor: pointer;
+  user-select: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.15s ease;
+}
+
+.nav-group-title:hover {
+  color: var(--sb-text-light);
+}
+
+/* Folder icon style - using SVG-like triangle */
+.nav-group-title::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 8px;
+  border-style: solid;
+  border-width: 4px 0 4px 5px;
+  border-color: transparent transparent transparent currentColor;
+  transition: transform 0.2s ease;
+}
+
+.nav-group.expanded .nav-group-title::before {
+  transform: rotate(90deg);
+}
+
+.nav-group-items {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 8px 0;
+}
+
+/* Nav items - Storybook dark style */
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 7px 16px 7px 32px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--sb-text-light);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  border-left: 2px solid transparent;
+  margin-left: 2px;
+}
+
+/* Story/doc icon - small colored shapes */
+.nav-item::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 10px;
+  border-radius: 2px;
+  background: var(--sb-accent-teal);
+  flex-shrink: 0;
+}
+
+/* Different icon colors for different types */
+.nav-item[data-type="docs"]::before {
+  background: var(--sb-accent-orange);
+  border-radius: 0;
+  transform: rotate(45deg);
+  width: 7px;
+  height: 7px;
+}
+
+.nav-item[data-type="story"]::before {
+  background: var(--sb-accent-teal);
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--sb-text-white);
+}
+
+.nav-item.active {
+  color: var(--sb-accent-pink);
+  font-weight: 600;
+  background: rgba(255, 71, 133, 0.1);
+  border-left-color: var(--sb-accent-pink);
+}
+
+.nav-item.active::before {
+  background: var(--sb-accent-pink);
+}
+
+/* Nested subsections */
+.nav-subsection {
+  margin: 0;
+  padding-left: 8px;
+}
+
+.nav-subsection-title {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--sb-text-muted);
+  padding: 6px 16px 6px 24px;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.15s ease;
+}
+
+.nav-subsection-title:hover {
+  color: var(--sb-text-light);
+}
+
+.nav-subsection-title::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 6px;
+  border-style: solid;
+  border-width: 3px 0 3px 4px;
+  border-color: transparent transparent transparent currentColor;
+  transition: transform 0.2s ease;
+}
+
+.nav-subsection.expanded .nav-subsection-title::before {
+  transform: rotate(90deg);
+}
+
+.nav-subsection-items {
+  padding-left: 12px;
+}
+
+.nav-subsection-items .nav-item {
+  padding-left: 36px;
+  font-size: 13px;
+}
+
+/* ========================================
+   CONTENT AREA
+   ======================================== */
+
+.docs-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 40px 48px;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+
+.docs-content-inner {
+  width: 100%;
+}
+
+/* ========================================
+   TYPOGRAPHY - Storybook MDX exact style
+   ======================================== */
+
+/* Page title - h1 */
+.docs-page-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #1B1C1D;
+  line-height: 36px;
+}
+
+/* Page subtitle / description */
+.docs-page-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: #454E54;
+  margin: 0 0 24px;
+  line-height: 24px;
+}
+
+/* Section title - h2 */
+.docs-section {
+  margin-bottom: 24px;
+}
+
+.docs-section-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 20px 0 12px;
+  color: #1B1C1D;
+  line-height: 28px;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* h3 style */
+.docs-section h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 16px 0 8px;
+  color: #1B1C1D;
+  line-height: 24px;
+}
+
+/* Paragraph */
+.docs-section p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #454E54;
+  margin: 0 0 16px;
+}
+
+/* Lists */
+.docs-section ul {
+  margin: 0 0 16px;
+  padding-left: 24px;
+}
+
+.docs-section li {
+  font-size: 14px;
+  line-height: 26px;
+  color: #454E54;
+  margin-bottom: 4px;
+}
+
+.docs-section li strong {
+  font-weight: 700;
+  color: #1B1C1D;
+}
+
+/* Inline code */
+.docs-section code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 13px;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: #1B1C1D;
+}
+
+/* ========================================
+   CODE BLOCKS - Light theme
+   ======================================== */
+
+.docblock-source {
+  position: relative;
+  margin: 16px 0;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #F8F8F8;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.docblock-source-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 4px 8px;
+  background: #FFFFFF;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.docblock-source-copy {
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #666666;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.docblock-source-copy:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #333333;
+}
+
+.docblock-source pre {
+  margin: 0;
+  padding: 10px 12px;
+  overflow-x: auto;
+  background: transparent !important;
+}
+
+.docblock-source pre code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+  line-height: 18px;
+  color: #333333;
+  background: transparent !important;
+}
+
+/* Prism syntax highlighting - Light theme */
+.docblock-source .token.comment,
+.docblock-source .token.prolog,
+.docblock-source .token.doctype,
+.docblock-source .token.cdata {
+  color: #708090;
+}
+
+.docblock-source .token.punctuation {
+  color: #333333;
+}
+
+.docblock-source .token.property,
+.docblock-source .token.tag,
+.docblock-source .token.boolean,
+.docblock-source .token.number,
+.docblock-source .token.constant,
+.docblock-source .token.symbol,
+.docblock-source .token.deleted {
+  color: #905;
+}
+
+.docblock-source .token.selector,
+.docblock-source .token.attr-name,
+.docblock-source .token.string,
+.docblock-source .token.char,
+.docblock-source .token.builtin,
+.docblock-source .token.inserted {
+  color: #690;
+}
+
+.docblock-source .token.operator,
+.docblock-source .token.entity,
+.docblock-source .token.url,
+.docblock-source .language-css .token.string,
+.docblock-source .style .token.string {
+  color: #9a6e3a;
+}
+
+.docblock-source .token.atrule,
+.docblock-source .token.attr-value,
+.docblock-source .token.keyword {
+  color: #07a;
+}
+
+.docblock-source .token.function,
+.docblock-source .token.class-name {
+  color: #DD4A68;
+}
+
+.docblock-source .token.regex,
+.docblock-source .token.important,
+.docblock-source .token.variable {
+  color: #e90;
+}
+
+/* ========================================
+   DEMO PANEL - Storybook-style tabs
+   ======================================== */
+
+.demo-panel {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin: 0;
+  overflow: hidden;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.demo-panel-header {
+  padding: 20px 24px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: #FFFFFF;
+}
+
+.demo-panel-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1B1C1D;
+  margin: 0 0 8px;
+}
+
+.demo-panel-description {
+  font-size: 14px;
+  color: #454E54;
+  margin: 0 0 16px;
+}
+
+/* Custom tabs container */
+.demo-panel-tabs-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.demo-panel-tabbar {
+  display: flex;
+  background: #F6F9FC;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  min-height: 40px;
+}
+
+.demo-panel-tab {
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #999999;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  font-family: "Nunito Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: -1px;
+}
+
+.demo-panel-tab:hover {
+  color: #333333;
+}
+
+.demo-panel-tab.active {
+  color: var(--sb-accent-blue);
+  border-bottom-color: var(--sb-accent-blue);
+  background: #FFFFFF;
+}
+
+.demo-panel-content {
+  flex: 1;
+  overflow: auto;
+  background: #FFFFFF;
+}
+
+.demo-panel-canvas {
+  min-height: 400px;
+  padding: 24px;
+}
+
+/* Config tab - CodeViewerPanel container */
+.demo-panel-config-viewer {
+  height: 100%;
+  min-height: 500px;
+}
+
+/* Config tab - Source code display (legacy) */
+.demo-panel-config {
+  padding: 0;
+  background: #1e1e1e;
+  min-height: 300px;
+}
+
+.config-files {
+  display: flex;
+  flex-direction: column;
+}
+
+.config-file {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.config-file:last-child {
+  border-bottom: none;
+}
+
+.config-file-header {
+  padding: 10px 16px;
+  background: #252526;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.config-file-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Fira Code", monospace;
+}
+
+.config-file-code {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  background: #1e1e1e !important;
+}
+
+.config-file-code code {
+  font-family: "Fira Code", "SFMono-Regular", Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #d4d4d4;
+}
+
+.config-empty {
+  padding: 40px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Data tab - JSON display */
+.demo-panel-data {
+  padding: 0;
+  background: #1e1e1e;
+  min-height: 300px;
+}
+
+.data-header {
+  padding: 10px 16px;
+  background: #252526;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.data-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sb-accent-teal);
+  font-family: "Fira Code", monospace;
+}
+
+.data-json {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  background: #1e1e1e !important;
+}
+
+.data-json code {
+  font-family: "Fira Code", "SFMono-Regular", Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #d4d4d4;
+}
+
+/* Prism dark theme overrides for code panels */
+.demo-panel-config .token.property,
+.demo-panel-data .token.property {
+  color: #9cdcfe;
+}
+
+.demo-panel-config .token.string,
+.demo-panel-data .token.string {
+  color: #ce9178;
+}
+
+.demo-panel-config .token.number,
+.demo-panel-data .token.number {
+  color: #b5cea8;
+}
+
+.demo-panel-config .token.boolean,
+.demo-panel-data .token.boolean {
+  color: #569cd6;
+}
+
+.demo-panel-config .token.null,
+.demo-panel-data .token.null {
+  color: #569cd6;
+}
+
+.demo-panel-config .token.punctuation,
+.demo-panel-data .token.punctuation {
+  color: #d4d4d4;
+}
+
+.demo-panel-config .token.keyword,
+.demo-panel-data .token.keyword {
+  color: #c586c0;
+}
+
+.demo-panel-config .token.function,
+.demo-panel-data .token.function {
+  color: #dcdcaa;
+}
+
+.demo-panel-config .token.comment,
+.demo-panel-data .token.comment {
+  color: #6a9955;
+}
+
+/* ========================================
+   PROPS TABLE
+   ======================================== */
+
+.props-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.props-table th {
+  text-align: left;
+  padding: 8px 12px;
+  background: #F6F9FC;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-weight: 800;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: #999999;
+}
+
+.props-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: #333333;
+  vertical-align: top;
+}
+
+.props-table tr:last-child td {
+  border-bottom: none;
+}
+
+.props-name {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 11px;
+  color: #FF4785;
+  font-weight: 700;
+}
+
+.props-type {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 11px;
+  color: #1EA7FD;
+}
+
+.props-default {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 11px;
+  color: #666666;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1000px) {
+  .docs-sidebar {
+    width: 200px;
+  }
+
+  .docs-content {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .docs-sidebar {
+    display: none;
+  }
+
+  .docs-content {
+    padding: 24px;
+  }
+}
+
+/* ========================================
+   DEMO MODE - Full width content
+   ======================================== */
+
+.docs-content-full {
+  padding: 24px 32px;
+}
+
+.demo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Demo content uses full height for the panel */
+.demo-content-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.demo-content-inner .demo-panel {
+  flex: 1;
+}
+
+/* Mode button group styling */
+.mode-button-group {
+  gap: 8px;
+}
+
+.mode-button-group button {
+  margin-left: 8px;
+}
+
+/* ========================================
+   LIVE DEMO - Interactive inline demos
+   Like AG Grid or Bootstrap docs
+   ======================================== */
+
+.live-demo {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 24px 0;
+  background: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Header */
+.live-demo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: #F6F9FC;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  min-height: 44px;
+}
+
+.live-demo-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.live-demo-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1B1C1D;
+}
+
+.live-demo-description {
+  font-size: 12px;
+  color: #666666;
+}
+
+.live-demo-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* View toggle buttons */
+.live-demo-view-toggle {
+  display: flex;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.live-demo-view-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #666666;
+  transition: all 0.15s ease;
+}
+
+.live-demo-view-btn:hover {
+  color: #333333;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.live-demo-view-btn.active {
+  background: #FFFFFF;
+  color: var(--sb-accent-blue);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Run button */
+.live-demo-run-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: #28a745;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.live-demo-run-btn:hover {
+  background: #218838;
+}
+
+.live-demo-run-btn.has-changes {
+  background: #ff8c00;
+  animation: pulse-run 1.5s ease-in-out infinite;
+}
+
+.live-demo-run-btn.has-changes:hover {
+  background: #e67e00;
+}
+
+@keyframes pulse-run {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 140, 0, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(255, 140, 0, 0); }
+}
+
+/* Copy button */
+.live-demo-copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #666666;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.live-demo-copy-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #333333;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Content area - auto-height based on code content */
+.live-demo-content {
+  display: flex;
+  min-height: 200px;
+}
+
+/* Preview panel */
+.live-demo-preview {
+  flex: 1;
+  padding: 24px;
+  background: #FFFFFF;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+.live-demo-preview.split {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  width: 50%;
+  flex: none;
+}
+
+.live-demo-preview-inner {
+  width: 100%;
+}
+
+/* Code panel */
+.live-demo-code {
+  flex: 1;
+  background: #1e1e1e;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+}
+
+.live-demo-code.split {
+  width: 50%;
+  flex: none;
+}
+
+/* Multi-file live demo (main demo page) - code block matches output height */
+.live-demo.multi-file .live-demo-content {
+  min-height: 70vh;
+  max-height: 80vh;
+}
+
+.live-demo.multi-file .live-demo-code {
+  max-height: 80vh;
+  min-height: 70vh;
+}
+
+.live-demo.multi-file .live-demo-preview {
+  min-height: 70vh;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.live-demo-code-content {
+  display: flex;
+  min-height: 100%;
+}
+
+/* Line numbers */
+.live-demo-line-numbers {
+  position: sticky;
+  left: 0;
+  background: #1a1a1a;
+  border-right: 1px solid #3d3d3d;
+  padding: 12px 0;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.live-demo-line-number {
+  padding: 0 12px 0 16px;
+  text-align: right;
+  font-size: 12px;
+  line-height: 1.6;
+  font-family: "Fira Code", "Monaco", "Consolas", monospace;
+  color: #666666;
+  user-select: none;
+  min-width: 32px;
+}
+
+/* Code pre/code elements */
+.live-demo-pre {
+  margin: 0;
+  padding: 12px 16px;
+  background: transparent !important;
+  flex: 1;
+}
+
+.live-demo-pre code {
+  font-family: "Fira Code", "Monaco", "Consolas", monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #d4d4d4;
+  background: transparent !important;
+}
+
+/* ========================================
+   EDITABLE CODE EDITOR
+   ======================================== */
+
+.live-demo-code-editable {
+  position: relative;
+}
+
+.live-demo-editor-container {
+  position: relative;
+  flex: 1;
+  min-height: 100%;
+}
+
+.live-demo-pre-highlight {
+  pointer-events: none;
+}
+
+.live-demo-textarea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 12px 16px;
+  margin: 0;
+  border: none;
+  outline: none;
+  resize: none;
+  background: transparent;
+  color: transparent;
+  caret-color: #ffffff;
+  font-family: "Fira Code", "Monaco", "Consolas", monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  white-space: pre;
+  overflow: auto;
+  z-index: 2;
+}
+
+.live-demo-textarea::selection {
+  background: rgba(66, 133, 244, 0.4);
+}
+
+.live-demo-textarea::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.live-demo-textarea::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.live-demo-textarea::-webkit-scrollbar-thumb {
+  background: #4d4d4d;
+  border-radius: 4px;
+}
+
+.live-demo-textarea::-webkit-scrollbar-thumb:hover {
+  background: #666666;
+}
+
+/* Error display */
+.live-demo-error {
+  padding: 16px;
+  background: #ffebee;
+  border: 1px solid #f44336;
+  border-radius: 4px;
+  color: #c62828;
+  font-family: "Fira Code", "Monaco", "Consolas", monospace;
+  font-size: 13px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Multi-file demo: File tabs */
+.live-demo-file-tabs {
+  display: flex;
+  gap: 0;
+  background: #1e1e1e;
+  border-bottom: 1px solid #3d3d3d;
+  overflow-x: auto;
+  flex-shrink: 0;
+}
+
+.live-demo-file-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #888;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.live-demo-file-tab:hover {
+  color: #ccc;
+  background: #252526;
+}
+
+.live-demo-file-tab.active {
+  color: #fff;
+  background: #252526;
+  border-bottom-color: #0066cc;
+}
+
+.live-demo-file-tab .entry-badge {
+  font-size: 9px;
+  padding: 2px 5px;
+  background: #3178c6;
+  color: #fff;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Editor area below tabs */
+.live-demo-editor-area {
+  flex: 1;
+  overflow: auto;
+}
+
+/* Preview tabs (Form | Data) */
+.live-demo-preview-tabs {
+  display: flex;
+  gap: 0;
+  background: #f0f0f0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.live-demo-preview-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.live-demo-preview-tab:hover {
+  color: #333;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.live-demo-preview-tab.active {
+  color: #0066cc;
+  border-bottom-color: #0066cc;
+}
+
+/* Data panel with JSON */
+.live-demo-data {
+  padding: 16px;
+  background: #1e1e1e;
+  height: 100%;
+  overflow: auto;
+}
+
+.live-demo-data pre {
+  margin: 0;
+  font-family: "Fira Code", "Monaco", "Consolas", monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #9cdcfe;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ========================================
+   MINI DEMO - Compact inline demos
+   ======================================== */
+
+.mini-demo {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 16px 0;
+  background: #FFFFFF;
+}
+
+.mini-demo-preview {
+  padding: 20px;
+  background: #FFFFFF;
+}
+
+.mini-demo-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #F6F9FC;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mini-demo-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #666666;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.mini-demo-toggle:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #333333;
+}
+
+.mini-demo-copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #666666;
+  transition: all 0.15s ease;
+}
+
+.mini-demo-copy:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #333333;
+}
+
+.mini-demo-code {
+  background: #1e1e1e;
+  border-top: 1px solid #3d3d3d;
+  max-height: 300px;
+  overflow: auto;
+}
+
+/* ========================================
+   PRISM OVERRIDES FOR LIVE DEMO
+   ======================================== */
+
+.live-demo-code .token.comment,
+.live-demo-code .token.prolog,
+.live-demo-code .token.doctype,
+.live-demo-code .token.cdata,
+.mini-demo-code .token.comment,
+.mini-demo-code .token.prolog,
+.mini-demo-code .token.doctype,
+.mini-demo-code .token.cdata {
+  color: #6a9955;
+}
+
+.live-demo-code .token.punctuation,
+.mini-demo-code .token.punctuation {
+  color: #d4d4d4;
+}
+
+.live-demo-code .token.property,
+.live-demo-code .token.tag,
+.live-demo-code .token.constant,
+.live-demo-code .token.symbol,
+.live-demo-code .token.deleted,
+.mini-demo-code .token.property,
+.mini-demo-code .token.tag,
+.mini-demo-code .token.constant,
+.mini-demo-code .token.symbol,
+.mini-demo-code .token.deleted {
+  color: #9cdcfe;
+}
+
+.live-demo-code .token.boolean,
+.live-demo-code .token.number,
+.mini-demo-code .token.boolean,
+.mini-demo-code .token.number {
+  color: #b5cea8;
+}
+
+.live-demo-code .token.selector,
+.live-demo-code .token.attr-name,
+.live-demo-code .token.string,
+.live-demo-code .token.char,
+.live-demo-code .token.builtin,
+.live-demo-code .token.inserted,
+.mini-demo-code .token.selector,
+.mini-demo-code .token.attr-name,
+.mini-demo-code .token.string,
+.mini-demo-code .token.char,
+.mini-demo-code .token.builtin,
+.mini-demo-code .token.inserted {
+  color: #ce9178;
+}
+
+.live-demo-code .token.operator,
+.live-demo-code .token.entity,
+.live-demo-code .token.url,
+.mini-demo-code .token.operator,
+.mini-demo-code .token.entity,
+.mini-demo-code .token.url {
+  color: #d4d4d4;
+}
+
+.live-demo-code .token.atrule,
+.live-demo-code .token.attr-value,
+.live-demo-code .token.keyword,
+.mini-demo-code .token.atrule,
+.mini-demo-code .token.attr-value,
+.mini-demo-code .token.keyword {
+  color: #c586c0;
+}
+
+.live-demo-code .token.function,
+.live-demo-code .token.class-name,
+.mini-demo-code .token.function,
+.mini-demo-code .token.class-name {
+  color: #dcdcaa;
+}
+
+.live-demo-code .token.regex,
+.live-demo-code .token.important,
+.live-demo-code .token.variable,
+.mini-demo-code .token.regex,
+.mini-demo-code .token.important,
+.mini-demo-code .token.variable {
+  color: #d16969;
+}
+
+/* ========================================
+   LIVE EDITOR - True live code editing
+   Like CodeSandbox / AG Grid docs
+   ======================================== */
+
+.live-editor {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 24px 0;
+  background: #1e1e1e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+/* Fullscreen mode */
+.live-editor-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100% !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  border-radius: 0;
+  z-index: 9999;
+}
+
+.live-editor-fullscreen .live-editor-content {
+  height: calc(100vh - 56px);
+}
+
+.live-editor-backdrop {
+  display: none;
+}
+
+.live-editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #252526;
+  border-bottom: 1px solid #3d3d3d;
+}
+
+.live-editor-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.live-editor-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.live-editor-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #e0e0e0;
+}
+
+.live-editor-description {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Action buttons (reset, copy, fullscreen) */
+.live-editor-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  color: #888;
+  transition: all 0.15s ease;
+}
+
+.live-editor-action-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.live-editor-copied {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #73E4CC;
+  color: #1a1a1a;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.live-editor-content {
+  display: flex;
+  min-height: auto;
+}
+
+/* Code panel */
+.live-editor-code {
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #3d3d3d;
+  min-width: 0;
+  max-width: 50%;
+}
+
+.live-editor-code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #2d2d2d;
+  border-bottom: 1px solid #3d3d3d;
+}
+
+.live-editor-code-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--sb-accent-blue);
+  letter-spacing: 0.5px;
+}
+
+.live-editor-code-hint {
+  font-size: 11px;
+  color: #73E4CC;
+  font-style: italic;
+}
+
+.live-editor-code-area {
+  flex: 1;
+  overflow: auto;
+  padding: 0;
+}
+
+.live-editor-code-area > div {
+  min-height: 100%;
+}
+
+.live-editor-code-area textarea {
+  outline: none !important;
+  padding: 16px 16px 16px 20px !important;
+}
+
+.live-editor-code-area pre {
+  margin: 0 !important;
+  padding: 16px 16px 16px 20px !important;
+  min-height: 100%;
+}
+
+/* Preview panel */
+.live-editor-preview {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  min-width: 0;
+}
+
+.live-editor-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #f6f9fc;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.live-editor-preview-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--sb-accent-pink);
+  letter-spacing: 0.5px;
+}
+
+.live-editor-preview-hint {
+  font-size: 11px;
+  color: #888;
+  font-style: italic;
+}
+
+.live-editor-preview-area {
+  flex: 1;
+  padding: 20px;
+  overflow: auto;
+}
+
+/* Error display */
+.live-editor-error {
+  padding: 12px 16px;
+  background: #ff4785;
+  color: white;
+  font-family: "Fira Code", monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+/* ========================================
+   COMPACT LIVE EDITOR - Stacked layout
+   ======================================== */
+
+.compact-live-editor {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 16px 0;
+  background: #ffffff;
+}
+
+.compact-live-preview {
+  padding: 20px;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.compact-live-code {
+  background: #1e1e1e;
+  max-height: 250px;
+  overflow: auto;
+}
+
+.compact-live-code > div {
+  min-height: 100%;
+}
+
+.compact-live-code textarea {
+  outline: none !important;
+  padding: 12px !important;
+}
+
+.compact-live-code pre {
+  margin: 0 !important;
+  padding: 12px !important;
+}
+
+/* ========================================
+   LUMINO LIVE DEMO - Actual Lumino Forms
+   ======================================== */
+
+.lumino-live-demo {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 24px 0;
+  background: #1e1e1e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.lumino-live-demo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #2d2d2d;
+  border-bottom: 1px solid #3d3d3d;
+}
+
+.lumino-live-demo-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lumino-live-demo-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.lumino-live-demo-description {
+  font-size: 12px;
+  color: #888;
+}
+
+.lumino-live-demo-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lumino-live-demo-view-toggle {
+  display: flex;
+  background: #252525;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.lumino-live-demo-view-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.lumino-live-demo-view-btn:hover {
+  color: #fff;
+  background: #3d3d3d;
+}
+
+.lumino-live-demo-view-btn.active {
+  color: #fff;
+  background: var(--sb-accent-blue);
+}
+
+.lumino-live-demo-copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: transparent;
+  border: 1px solid #4d4d4d;
+  border-radius: 4px;
+  color: #aaa;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.lumino-live-demo-copy-btn:hover {
+  background: #3d3d3d;
+  color: #fff;
+  border-color: #5d5d5d;
+}
+
+.lumino-live-demo-content {
+  display: flex;
+  min-height: auto;
+}
+
+.lumino-live-demo-code {
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #3d3d3d;
+  min-width: 0;
+  max-width: 50%;
+  overflow: auto;
+}
+
+.lumino-live-demo-code:not(.split) {
+  flex: 1 1 100%;
+  max-width: 100%;
+  border-right: none;
+}
+
+.lumino-live-demo-code-content {
+  display: flex;
+  font-family: "Fira Code", "Monaco", "Consolas", monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+.lumino-live-demo-line-numbers {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+  padding-left: 12px;
+  padding-right: 8px;
+  background: #1a1a1a;
+  border-right: 1px solid #333;
+  user-select: none;
+  min-width: 40px;
+  text-align: right;
+}
+
+.lumino-live-demo-line-number {
+  color: #555;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.lumino-live-demo-pre {
+  margin: 0;
+  padding: 16px;
+  flex: 1;
+  overflow-x: auto;
+}
+
+.lumino-live-demo-pre code {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.lumino-live-demo-preview {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  min-width: 0;
+}
+
+.lumino-live-demo-preview:not(.split) {
+  flex: 1 1 100%;
+}
+
+.lumino-live-demo-preview-inner {
+  padding: 24px;
+  overflow: auto;
+}
+
+/* ========================================
+   DOCS CODE BLOCKS - Light theme
+   For documentation pages using <pre className="docs-code">
+   ======================================== */
+
+.docs-code {
+  margin: 16px 0;
+  padding: 16px;
+  background: #f8f8f8;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: "Fira Code", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #333333;
+}
+
+/* Note boxes */
+.docs-note {
+  padding: 12px 16px;
+  background: #e3f2fd;
+  border-left: 4px solid #1976d2;
+  border-radius: 0 6px 6px 0;
+  margin: 16px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.docs-note strong {
+  color: #1565c0;
+}
+
+/* Lists */
+.docs-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.docs-list li {
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #454E54;
+}
+
+.docs-list li::before {
+  content: "•";
+  position: absolute;
+  left: 8px;
+  color: #1EA7FD;
+  font-weight: bold;
+}
+
+.docs-list li strong {
+  color: #1B1C1D;
+}
+
+/* Tables */
+.docs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 13px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.docs-table th {
+  text-align: left;
+  padding: 10px 14px;
+  background: #f6f9fc;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+  font-size: 12px;
+  color: #666666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.docs-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  color: #333333;
+  vertical-align: top;
+}
+
+.docs-table tr:last-child td {
+  border-bottom: none;
+}
+
+.docs-table code {
+  font-family: "Fira Code", "SFMono-Regular", Consolas, monospace;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #d63384;
+}
+
+/* H2 in docs */
+.docs-section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 32px 0 12px;
+  color: #1B1C1D;
+  line-height: 1.3;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}

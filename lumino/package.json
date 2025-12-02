@@ -1,0 +1,33 @@
+{
+  "name": "@jags-manne/lumino",
+  "version": "1.0.0",
+  "description": "Lumino Framework - A declarative form and page building framework for React",
+  "type": "module",
+  "main": "index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./core": "./core/index.ts",
+    "./react": "./react/index.ts",
+    "./adapters/salt": "./adapters/salt/index.ts"
+  },
+  "files": [
+    "core",
+    "react",
+    "adapters",
+    "index.ts"
+  ],
+  "keywords": [
+    "react",
+    "form",
+    "builder",
+    "framework",
+    "declarative",
+    "typescript"
+  ],
+  "author": "Jagadeesh Manne",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
