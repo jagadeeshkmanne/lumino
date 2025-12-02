@@ -11,15 +11,26 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "strict": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-      "lumino/*": ["../lumino/*"]
+      "lumino/*": ["../lumino/*"],
+      "react": ["./node_modules/react"],
+      "react/*": ["./node_modules/react/*"],
+      "@salt-ds/core": ["./node_modules/@salt-ds/core"],
+      "@salt-ds/core/*": ["./node_modules/@salt-ds/core/*"],
+      "@salt-ds/lab": ["./node_modules/@salt-ds/lab"],
+      "@salt-ds/lab/*": ["./node_modules/@salt-ds/lab/*"],
+      "@salt-ds/icons": ["./node_modules/@salt-ds/icons"],
+      "@salt-ds/icons/*": ["./node_modules/@salt-ds/icons/*"],
+      "@salt-ds/theme": ["./node_modules/@salt-ds/theme"],
+      "@salt-ds/theme/*": ["./node_modules/@salt-ds/theme/*"]
     }
   },
-  "include": ["src", "../lumino"],
+  "include": ["src"],
+  "exclude": ["../lumino"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

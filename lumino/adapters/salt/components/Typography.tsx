@@ -45,14 +45,18 @@ type SaltTextColor = "primary" | "secondary" | "inherit" | "error" | "warning" |
 
 export interface LuminoTextProps extends PropsWithChildren<HTMLAttributes<HTMLSpanElement>> {
   color?: SaltTextColor | "accent";
+  /** Alias for color - for convenience */
+  variant?: SaltTextColor | "accent";
   styleAs?: "h1" | "h2" | "h3" | "h4" | "label" | "notation" | "action";
   disabled?: boolean;
   maxRows?: number;
 }
 
-export const LuminoText: FC<LuminoTextProps> = ({ children, color, styleAs, disabled, maxRows, ...props }) => {
+export const LuminoText: FC<LuminoTextProps> = ({ children, color, variant, styleAs, disabled, maxRows, ...props }) => {
+  // Support both color and variant props (variant is alias for color)
+  const colorValue = color ?? variant;
   // Map "accent" to "info" for Salt compatibility
-  const saltColor: SaltTextColor | undefined = color === "accent" ? "info" : color;
+  const saltColor: SaltTextColor | undefined = colorValue === "accent" ? "info" : colorValue;
   return <Text color={saltColor} styleAs={styleAs} disabled={disabled} maxRows={maxRows} {...props}>{children}</Text>;
 };
 
